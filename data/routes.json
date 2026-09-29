@@ -1,0 +1,52 @@
+{
+"version":"1.0",
+
+"routes":[
+
+{
+"element":"LAND",
+"title_cn":"身体回来",
+"title_en":"Return to the Body",
+"description_cn":"重新感受身体、脚步与城市之间的关系。",
+"description_en":"Reconnect with your body, your steps and the city."
+},
+
+
+{
+"element":"WATER",
+"title_cn":"让一切流动",
+"title_en":"Let Things Flow",
+"description_cn":"观察变化、时间与人与环境之间的关系。",
+"description_en":"Observe movement, change and connection."
+},
+
+
+{
+"element":"WIND",
+"title_cn":"安静下来",
+"title_en":"Become Quiet",
+"description_cn":"减少外部输入，重新听见自己的声音。",
+"description_en":"Reduce external noise and restore attention."
+},
+
+
+{
+"element":"FIRE",
+"title_cn":"回到生活",
+"title_en":"Return to Life",
+"description_cn":"重新发现城市中的创造力。",
+"description_en":"Reconnect with creativity and daily life."
+},
+
+
+{
+"element":"SPACE",
+"title_cn":"什么都不做",
+"title_en":"Do Nothing",
+"description_cn":"体验真正的留白与存在。",
+"description_en":"Experience silence and presence."
+}
+
+]
+
+}
