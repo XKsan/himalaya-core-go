@@ -5,17 +5,20 @@
 html{
     margin:0;
     padding:0;
-    background:#f7f8f8;
+    background:#f7f8f9;
     color:#34383b;
-    font-family:"Helvetica Neue","Noto Sans SC",Arial,sans-serif;
+    font-family:
+        "Helvetica Neue",
+        "Noto Sans SC",
+        Arial,
+        sans-serif;
     font-weight:300;
-    scroll-behavior:smooth;
 }
 
 body{
     margin:0;
     padding:0;
-    background:#f7f8f8;
+    background:#f7f8f9;
     color:#34383b;
     font-weight:300;
 }
@@ -32,14 +35,10 @@ textarea{
     font:inherit;
 }
 
-button{
-    cursor:pointer;
-}
 
-
-/* =========================
-   HOME / LANDING
-========================= */
+/* ==================================================
+   HOME
+================================================== */
 
 .home{
     width:100%;
@@ -47,481 +46,859 @@ button{
     min-height:600px;
     overflow:hidden;
     position:relative;
+
     background:
         radial-gradient(
-            circle at 50% 46%,
-            rgba(215,220,224,.25),
-            transparent 34%
+            circle at 50% 48%,
+            rgba(220,226,230,.32) 0%,
+            rgba(235,239,241,.12) 24%,
+            transparent 48%
         ),
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f7f8f8 100%
-        );
+        #f9fafb;
 }
+
+
+/* central water / light field */
 
 .home-center{
     width:100%;
     height:100vh;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
+
     position:relative;
+
+    text-align:center;
+
     padding:40px 24px;
-    animation:pageIn 1.2s ease both;
+
+    animation:homeAppear 1.2s ease both;
 }
+
+
+/* main ambient wave */
 
 .ambient{
     position:absolute;
-    width:390px;
-    height:390px;
+
+    width:420px;
+    height:420px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
     border-radius:50%;
+
+    pointer-events:none;
+
     background:
         radial-gradient(
             circle,
-            rgba(205,213,218,.22) 0%,
-            rgba(218,224,228,.10) 35%,
-            transparent 72%
+            rgba(202,212,218,.18) 0%,
+            rgba(214,222,227,.13) 23%,
+            rgba(225,231,234,.07) 42%,
+            transparent 68%
         );
-    filter:blur(.2px);
-    animation:breathe 9s ease-in-out infinite;
+
+    animation:
+        ambientBreath 9s ease-in-out infinite;
+}
+
+
+/* wave rings */
+
+.ambient::before,
+.ambient::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:1px solid rgba(168,181,188,.20);
+
     pointer-events:none;
 }
 
-.ambient::after{
-    content:"";
-    position:absolute;
-    inset:28px;
-    border:1px solid rgba(175,184,190,.16);
-    border-radius:50%;
-    animation:ring 9s ease-in-out infinite;
+
+.ambient::before{
+    animation:
+        waveOne 8s ease-out infinite;
 }
+
+
+.ambient::after{
+    animation:
+        waveTwo 8s ease-out infinite 3.5s;
+}
+
+
+/* additional visual ring */
+
+.home-center::before{
+    content:"";
+
+    position:absolute;
+
+    width:270px;
+    height:270px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:1px solid rgba(185,195,201,.12);
+
+    pointer-events:none;
+
+    animation:
+        subtleRing 7s ease-in-out infinite;
+}
+
+
+/* ==================================================
+   HOME TEXT
+================================================== */
 
 .brand{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     font-size:10px;
-    line-height:1;
+
     letter-spacing:.52em;
     margin-left:.52em;
-    color:#666d71;
+
+    color:#626a6f;
 }
+
 
 .line{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     width:46px;
     height:1px;
-    background:#c9ced1;
+
     margin:28px 0;
+
+    background:#c8ced2;
 }
+
 
 .today-label{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     font-size:9px;
+
     letter-spacing:.34em;
     margin-left:.34em;
-    color:#92999d;
+
+    color:#8b9499;
 }
+
 
 .home h1{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     margin:22px 0 12px;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:38px;
     line-height:1.3;
+
     font-weight:300;
+
     letter-spacing:.16em;
-    color:#303437;
+
+    color:#303538;
 }
+
 
 .product{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     font-size:10px;
+
     letter-spacing:.30em;
     margin-left:.30em;
-    color:#81898d;
+
+    color:#7e878c;
 }
+
 
 .today-info{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     margin-top:27px;
+
     max-width:520px;
+
     font-size:11px;
     line-height:2;
+
     letter-spacing:.10em;
-    color:#747c80;
+
+    color:#737c81;
 }
+
 
 .enter-link{
     position:relative;
-    z-index:2;
+    z-index:5;
+
     display:inline-block;
+
     margin-top:28px;
+
     padding-bottom:7px;
-    border-bottom:1px solid #bfc5c8;
+
+    border-bottom:1px solid #b8c0c4;
+
     font-size:9px;
+
     letter-spacing:.34em;
     margin-left:.34em;
-    color:#555c60;
-    transition:.3s ease;
+
+    color:#535b60;
+
+    transition:
+        color .3s ease,
+        border-color .3s ease;
 }
 
+
 .enter-link:hover{
-    color:#22272a;
-    border-color:#777f83;
+    color:#202629;
+    border-color:#727c81;
 }
+
 
 .lang{
     position:absolute;
+
     top:30px;
     right:34px;
-    z-index:10;
+
+    z-index:20;
+
     font-size:9px;
+
     letter-spacing:.22em;
-    color:#8b9296;
+
+    color:#8a9296;
 }
 
-.lang a{
-    transition:.25s ease;
-}
-
-.lang a:hover{
-    color:#33383b;
-}
 
 .lang span{
     padding:0 7px;
-    color:#c3c7c9;
+    color:#c1c6c9;
 }
 
 
-/* =========================
-   GENERAL NAV
-========================= */
+/* ==================================================
+   NAV
+================================================== */
 
 nav{
     width:100%;
     height:74px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 46px;
-    border-bottom:1px solid rgba(50,55,58,.07);
-    background:rgba(250,251,251,.92);
+
+    border-bottom:
+        1px solid rgba(50,55,58,.08);
+
+    background:
+        rgba(250,251,251,.94);
+
     backdrop-filter:blur(12px);
+
     font-size:9px;
+
     letter-spacing:.28em;
+
     color:#777f83;
 }
 
+
 nav a{
-    transition:.25s ease;
+    transition:
+        color .25s ease;
 }
+
 
 nav a:hover{
     color:#252a2d;
 }
 
 
-/* =========================
+/* ==================================================
    CONTENT PAGE
-========================= */
+================================================== */
 
 .page{
+    display:block;
+
     width:100%;
     max-width:980px;
+
     margin:0 auto;
-    padding:30px 42px 120px;
+
+    padding:
+        30px
+        42px
+        120px;
 }
 
-section{
+
+/* IMPORTANT:
+   Never hide sections on content pages.
+*/
+
+.page section{
+    display:block;
+
+    width:100%;
+
+    position:relative;
+
     padding:74px 0;
-    border-bottom:1px solid rgba(50,55,58,.09);
+
+    border-bottom:
+        1px solid rgba(50,55,58,.09);
 }
 
-section:last-child{
+
+.page section:last-child{
     border-bottom:0;
 }
 
+
 .small{
+    display:block;
+
     font-size:9px;
     line-height:1;
+
     letter-spacing:.38em;
     margin-left:.38em;
+
     color:#92999d;
 }
 
+
+/* ==================================================
+   HERO
+================================================== */
+
 .hero{
-    padding-top:88px;
+    padding-top:88px !important;
 }
 
+
 .hero h2{
-    margin:28px 0 30px;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+    display:block;
+
+    margin:
+        28px 0
+        30px;
+
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:52px;
     line-height:1.3;
+
     font-weight:300;
+
     letter-spacing:.10em;
+
     color:#2f3437;
 }
 
+
 .quote{
+    display:block;
+
     margin:35px 0;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:27px;
     line-height:1.8;
+
     font-weight:300;
+
     color:#454b4e;
 }
 
+
 .page p{
+    display:block;
+
     margin:14px 0;
+
     font-size:14px;
     line-height:2.05;
+
     letter-spacing:.035em;
+
     color:#646c70;
 }
 
-.page h3{
-    margin:0 0 30px;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
-    font-size:28px;
-    line-height:1.5;
-    font-weight:300;
-    letter-spacing:.08em;
-    color:#33383b;
-}
 
-
-/* =========================
-   PRODUCT
-========================= */
-
-.product-intro{
-    max-width:760px;
-}
-
-.product-intro .lead{
+.page p.lead{
     font-size:17px;
     line-height:2;
+
     color:#4c5357;
 }
 
-.product-flow{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:1px;
-    margin-top:48px;
-    border-top:1px solid rgba(50,55,58,.08);
-    border-bottom:1px solid rgba(50,55,58,.08);
-}
 
-.product-flow div{
-    padding:26px 12px;
-    text-align:center;
-    font-size:10px;
-    letter-spacing:.16em;
-    color:#777f83;
-}
-
-.product-flow strong{
+.page h3{
     display:block;
-    margin-bottom:8px;
-    font-size:9px;
-    font-weight:400;
-    color:#9aA1a5;
-}
 
+    margin:
+        0 0
+        30px;
 
-/* =========================
-   PRICE
-========================= */
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
 
-.pricing{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-    margin-top:42px;
-}
-
-.price-card{
-    padding:32px 30px;
-    background:rgba(255,255,255,.65);
-    border:1px solid rgba(50,55,58,.08);
-}
-
-.price-card .label{
-    font-size:9px;
-    letter-spacing:.28em;
-    color:#959ca0;
-}
-
-.price-card h4{
-    margin:17px 0 10px;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
-    font-size:22px;
+    font-size:28px;
     line-height:1.5;
-    font-weight:300;
-    color:#34393c;
-}
 
-.price{
-    margin:20px 0 8px;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:26px;
     font-weight:300;
-    letter-spacing:.04em;
+
+    letter-spacing:.08em;
+
     color:#33383b;
 }
 
-.price-note{
+
+/* ==================================================
+   PRODUCT FLOW
+================================================== */
+
+.product-intro{
+    display:block;
+
+    width:100%;
+}
+
+
+.product-flow{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:1px;
+
+    margin-top:48px;
+
+    border-top:
+        1px solid rgba(50,55,58,.08);
+
+    border-bottom:
+        1px solid rgba(50,55,58,.08);
+}
+
+
+.product-flow div{
+    display:block;
+
+    padding:26px 12px;
+
+    text-align:center;
+
     font-size:10px;
+
+    letter-spacing:.16em;
+
+    color:#777f83;
+}
+
+
+.product-flow strong{
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:9px;
+
+    font-weight:400;
+
+    color:#9aa1a5;
+}
+
+
+/* ==================================================
+   PRICING
+================================================== */
+
+.pricing{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:30px;
+
+    margin-top:42px;
+}
+
+
+.price-card{
+    display:block;
+
+    padding:32px 30px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    border:
+        1px solid rgba(50,55,58,.08);
+}
+
+
+.price-card .label{
+    display:block;
+
+    font-size:9px;
+
+    letter-spacing:.28em;
+
+    color:#959ca0;
+}
+
+
+.price-card h4{
+    display:block;
+
+    margin:
+        17px 0
+        10px;
+
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
+
+    font-size:22px;
+    line-height:1.5;
+
+    font-weight:300;
+
+    color:#34393c;
+}
+
+
+.price{
+    display:block;
+
+    margin:20px 0 8px;
+
+    font-size:26px;
+
+    font-weight:300;
+
+    letter-spacing:.04em;
+
+    color:#33383b;
+}
+
+
+.price-note{
+    display:block;
+
+    font-size:10px;
+
     line-height:1.8;
+
     color:#8a9296;
 }
 
 
-/* =========================
+/* ==================================================
    ROUTES
-========================= */
+================================================== */
 
 .routes{
     display:flex;
+
     flex-direction:column;
+
+    width:100%;
 }
+
 
 .route-card{
     display:grid;
-    grid-template-columns:100px 1fr;
+
+    grid-template-columns:
+        100px 1fr;
+
     gap:28px;
+
+    width:100%;
+
     padding:38px 0;
-    border-bottom:1px solid rgba(50,55,58,.08);
+
+    border-bottom:
+        1px solid rgba(50,55,58,.08);
 }
+
 
 .route-card:last-child{
     border-bottom:0;
 }
 
+
 .route-element{
+    display:block;
+
     font-size:9px;
+
     letter-spacing:.25em;
+
     color:#a0a7aa;
 }
 
+
 .route-card h4{
-    margin:0 0 12px;
-    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+    display:block;
+
+    margin:
+        0 0
+        12px;
+
+    font-family:
+        "Noto Serif SC",
+        "Songti SC",
+        "STSong",
+        serif;
+
     font-size:25px;
     line-height:1.5;
+
     font-weight:300;
+
     letter-spacing:.08em;
+
     color:#373c3f;
 }
 
+
 .route-card p{
+    display:block;
+
     margin:7px 0;
 }
 
+
 .route-meta{
+    display:block;
+
     margin-top:18px;
+
     font-size:10px;
+
+    line-height:1.8;
+
     letter-spacing:.08em;
+
     color:#8b9397;
 }
 
+
 .route-price{
+    display:block;
+
     margin-top:12px;
+
     font-size:11px;
-    letter-spacing:.08em;
+
+    line-height:1.8;
+
+    letter-spacing:.04em;
+
     color:#5f676b;
 }
 
 
-/* =========================
-   GUIDE / NOTES
-========================= */
+/* ==================================================
+   GUIDE
+================================================== */
 
 .guide-list{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:26px 55px;
+
+    width:100%;
 }
 
+
 .guide-item{
+    display:block;
+
     padding:24px 0;
-    border-top:1px solid rgba(50,55,58,.08);
+
+    border-top:
+        1px solid rgba(50,55,58,.08);
 }
+
 
 .guide-item strong{
     display:block;
+
     margin-bottom:12px;
+
     font-size:10px;
+
     letter-spacing:.18em;
+
     font-weight:400;
+
     color:#5e666a;
 }
 
+
 .guide-item p{
     margin:0;
+
     font-size:12px;
+
+    line-height:1.9;
 }
 
 
-/* =========================
+/* ==================================================
    BOOKING
-========================= */
+================================================== */
 
 .booking section{
+    display:block;
+
     max-width:680px;
+
     margin-left:auto;
     margin-right:auto;
 }
 
+
 .booking form{
     display:flex;
+
     flex-direction:column;
+
+    width:100%;
+
     margin-top:35px;
 }
 
+
 .booking label{
+    display:block;
+
     margin-top:22px;
     margin-bottom:8px;
+
     font-size:9px;
+
     letter-spacing:.20em;
+
     color:#777f83;
 }
+
 
 .booking input,
 .booking select,
 .booking textarea{
+    display:block;
+
     width:100%;
-    border:1px solid #d9dddf;
+
+    border:
+        1px solid #d9dddf;
+
     border-radius:0;
+
     outline:none;
-    background:rgba(255,255,255,.82);
+
+    background:
+        rgba(255,255,255,.82);
+
     color:#41484b;
+
     font-size:13px;
+
     font-weight:300;
+
     padding:12px 13px;
-    transition:border-color .25s ease;
+
+    transition:
+        border-color .25s ease;
 }
+
 
 .booking input,
 .booking select{
     height:44px;
 }
 
+
 .booking textarea{
     min-height:110px;
+
     resize:vertical;
 }
+
 
 .booking input:focus,
 .booking select:focus,
@@ -529,107 +906,218 @@ section:last-child{
     border-color:#9ea6aa;
 }
 
+
 .booking textarea::placeholder{
     color:#b0b6b9;
 }
 
+
 .booking button{
     width:100%;
+
     height:46px;
+
     margin-top:30px;
-    border:1px solid #aeb5b8;
+
+    border:
+        1px solid #aeb5b8;
+
     border-radius:0;
+
     background:transparent;
+
     color:#4c5357;
+
     font-size:9px;
+
     letter-spacing:.30em;
-    transition:.3s ease;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease;
 }
+
 
 .booking button:hover{
     background:#eef1f2;
+
     border-color:#858e92;
 }
 
+
 .contact{
+    display:block;
+
     text-align:center;
 }
+
 
 .contact h3{
     margin-bottom:20px;
 }
 
+
 .contact p{
     font-size:11px;
+
     color:#8b9397;
 }
 
+
 .wechat{
     display:block;
+
     width:78px;
     height:78px;
+
     margin:20px auto;
+
     object-fit:contain;
 }
 
 
-/* =========================
+/* ==================================================
    SUCCESS
-========================= */
+================================================== */
 
 .success-page p{
     max-width:440px;
-    margin:10px auto;
+
+    margin:
+        10px auto;
+
     font-size:12px;
+
     line-height:2;
+
     color:#7a8286;
 }
 
 
-/* =========================
+/* ==================================================
    ANIMATION
-========================= */
+================================================== */
 
-@keyframes breathe{
-    0%,100%{
-        transform:scale(1);
-        opacity:.55;
-    }
+@keyframes homeAppear{
 
-    50%{
-        transform:scale(1.08);
-        opacity:.85;
-    }
-}
-
-@keyframes ring{
-    0%,100%{
-        transform:scale(1);
-        opacity:.4;
-    }
-
-    50%{
-        transform:scale(1.06);
-        opacity:.7;
-    }
-}
-
-@keyframes pageIn{
     from{
         opacity:0;
-        transform:translateY(12px);
+        transform:translateY(10px);
     }
 
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 
-/* =========================
+@keyframes ambientBreath{
+
+    0%,
+    100%{
+        transform:
+            translate(-50%,-50%)
+            scale(.92);
+
+        opacity:.55;
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+
+        opacity:1;
+    }
+
+}
+
+
+@keyframes waveOne{
+
+    0%{
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+
+        opacity:0;
+    }
+
+    12%{
+        opacity:.65;
+    }
+
+    70%{
+        opacity:.18;
+    }
+
+    100%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.35);
+
+        opacity:0;
+    }
+
+}
+
+
+@keyframes waveTwo{
+
+    0%{
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+
+        opacity:0;
+    }
+
+    12%{
+        opacity:.55;
+    }
+
+    70%{
+        opacity:.14;
+    }
+
+    100%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.35);
+
+        opacity:0;
+    }
+
+}
+
+
+@keyframes subtleRing{
+
+    0%,
+    100%{
+        transform:
+            translate(-50%,-50%)
+            scale(.96);
+
+        opacity:.25;
+    }
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.06);
+
+        opacity:.55;
+    }
+
+}
+
+
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
 @media(max-width:700px){
 
@@ -637,100 +1125,151 @@ section:last-child{
         min-height:100vh;
     }
 
+
     .home-center{
-        padding:30px 22px;
+        padding:
+            30px 22px;
     }
 
+
     .ambient{
-        width:290px;
-        height:290px;
+        width:300px;
+        height:300px;
     }
+
+
+    .home-center::before{
+        width:210px;
+        height:210px;
+    }
+
 
     .brand{
         font-size:8px;
+
         letter-spacing:.42em;
         margin-left:.42em;
     }
+
 
     .lang{
         top:22px;
         right:20px;
     }
 
+
     .home h1{
         font-size:31px;
+
         letter-spacing:.11em;
     }
 
+
     .product{
         font-size:9px;
+
         letter-spacing:.20em;
         margin-left:.20em;
     }
 
+
     .today-info{
         max-width:310px;
+
         font-size:10px;
+
         line-height:1.9;
     }
 
+
     nav{
         height:64px;
-        padding:0 20px;
+
+        padding:
+            0 20px;
+
         font-size:8px;
+
         letter-spacing:.18em;
     }
 
+
     .page{
-        padding:20px 22px 80px;
+        padding:
+            20px
+            22px
+            80px;
     }
 
-    section{
+
+    .page section{
         padding:58px 0;
     }
 
+
     .hero{
-        padding-top:62px;
+        padding-top:62px !important;
     }
+
 
     .hero h2{
         font-size:39px;
+
         letter-spacing:.06em;
     }
+
 
     .quote{
         font-size:23px;
     }
 
+
     .page p{
         font-size:13px;
     }
+
+
+    .page p.lead{
+        font-size:15px;
+    }
+
 
     .product-flow{
         grid-template-columns:1fr;
     }
 
+
     .product-flow div{
-        border-bottom:1px solid rgba(50,55,58,.06);
+        border-bottom:
+            1px solid rgba(50,55,58,.06);
     }
+
 
     .pricing{
         grid-template-columns:1fr;
+
         gap:15px;
     }
 
+
     .route-card{
         grid-template-columns:1fr;
+
         gap:12px;
+
         padding:34px 0;
     }
+
 
     .route-card h4{
         font-size:22px;
     }
 
+
     .guide-list{
         grid-template-columns:1fr;
+
         gap:0;
     }
+
 }
