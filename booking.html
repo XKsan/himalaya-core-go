@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>
@@ -26,11 +24,9 @@
 HIMALAYA CORE GO
 </a>
 
-
 <a href="cn.html">
 返回
 </a>
-
 
 </nav>
 
@@ -41,25 +37,27 @@ HIMALAYA CORE GO
 
 <section>
 
-
 <div class="small">
 BOOKING
 </div>
-
 
 <h2>
 预约城市归山
 </h2>
 
+<p>
+周一至周五私人体验 ¥699 起 · 1–4 人<br>
+周六公共场 ¥399 / 人 · 8–10 人
+</p>
 
 
-<form 
+<form
 action="https://formspree.io/f/xaenvjqk"
 method="POST"
 >
 
 
-<input 
+<input
 type="hidden"
 name="_next"
 value="https://xksan.github.io/himalaya-core-go/success.html"
@@ -70,83 +68,72 @@ value="https://xksan.github.io/himalaya-core-go/success.html"
 姓名
 </label>
 
-<input 
+<input
 type="text"
 name="name"
 required
 >
 
 
-
 <label>
 手机号
 </label>
 
-<input 
+<input
 type="tel"
 name="phone"
 required
 >
 
 
-
 <label>
 邮箱（可选）
 </label>
 
-<input 
+<input
 type="email"
 name="email"
 >
-
 
 
 <label>
 体验线路
 </label>
 
-<select name="route">
-
+<select name="route" required>
 
 <option value="LAND 地">
 LAND 地
 </option>
 
-
 <option value="WATER 水">
 WATER 水
 </option>
-
 
 <option value="WIND 风">
 WIND 风
 </option>
 
-
 <option value="FIRE 火">
 FIRE 火
 </option>
-
 
 <option value="SPACE 空">
 SPACE 空
 </option>
 
-
 </select>
-
-
 
 
 <label>
 预约日期
 </label>
 
-<input 
+<input
 type="date"
 name="date"
+required
 >
-
 
 
 <label>
@@ -159,46 +146,37 @@ placeholder="其他需求或想了解的内容">
 </textarea>
 
 
-
-<button>
+<button type="submit">
 提交预约
 </button>
 
 
 </form>
 
-
 </section>
-
 
 
 
 <section class="contact">
 
-
 <h3>
 微信联系
 </h3>
 
-
-<img 
+<img
 src="assets/wechat-qrcode.png"
 class="wechat"
+alt="微信二维码"
 >
 
-
 <p>
-提交后，我们将通过微信确认体验时间。
+提交后，我们会通过微信或电话与你确认体验时间。
 </p>
-
 
 </section>
 
 
-
 </main>
 
-
 </body>
-
 </html>
