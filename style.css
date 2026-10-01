@@ -50,11 +50,17 @@ textarea{
     background:
         radial-gradient(
             circle at 50% 48%,
-            rgba(220,226,230,.32) 0%,
-            rgba(235,239,241,.12) 24%,
-            transparent 48%
+            rgba(30,210,205,.16) 0%,
+            rgba(55,175,235,.11) 22%,
+            rgba(145,105,235,.07) 38%,
+            transparent 62%
         ),
-        #f9fafb;
+        linear-gradient(
+            135deg,
+            #f8fcfd 0%,
+            #eef9f8 45%,
+            #f8f4fc 100%
+        );
 }
 
 
@@ -84,8 +90,8 @@ textarea{
 .ambient{
     position:absolute;
 
-    width:420px;
-    height:420px;
+    width:440px;
+    height:440px;
 
     left:50%;
     top:50%;
@@ -99,18 +105,19 @@ textarea{
     background:
         radial-gradient(
             circle,
-            rgba(202,212,218,.18) 0%,
-            rgba(214,222,227,.13) 23%,
-            rgba(225,231,234,.07) 42%,
-            transparent 68%
+            rgba(20,220,205,.32) 0%,
+            rgba(40,195,235,.24) 18%,
+            rgba(90,135,245,.16) 34%,
+            rgba(175,95,235,.09) 50%,
+            transparent 70%
         );
 
+    filter:blur(2px);
+
     animation:
-        ambientBreath 9s ease-in-out infinite;
+        ambientBreath 7s ease-in-out infinite;
 }
 
-
-/* wave rings */
 
 .ambient::before,
 .ambient::after{
@@ -128,33 +135,47 @@ textarea{
 
     border-radius:50%;
 
-    border:1px solid rgba(168,181,188,.20);
-
     pointer-events:none;
 }
 
 
 .ambient::before{
+
+    border:
+        2px solid
+        rgba(25,205,210,.38);
+
+    box-shadow:
+        0 0 35px rgba(25,205,210,.18),
+        inset 0 0 35px rgba(25,205,210,.08);
+
     animation:
-        waveOne 8s ease-out infinite;
+        waveOne 5.5s ease-out infinite;
 }
 
 
 .ambient::after{
+
+    border:
+        2px solid
+        rgba(145,80,235,.30);
+
+    box-shadow:
+        0 0 40px rgba(145,80,235,.14);
+
     animation:
-        waveTwo 8s ease-out infinite 3.5s;
+        waveTwo 5.5s ease-out infinite 2.7s;
 }
 
 
-/* additional visual ring */
-
 .home-center::before{
+
     content:"";
 
     position:absolute;
 
-    width:270px;
-    height:270px;
+    width:250px;
+    height:250px;
 
     left:50%;
     top:50%;
@@ -163,12 +184,17 @@ textarea{
 
     border-radius:50%;
 
-    border:1px solid rgba(185,195,201,.12);
+    border:
+        2px solid
+        rgba(35,190,215,.25);
+
+    box-shadow:
+        0 0 40px rgba(35,190,215,.14);
 
     pointer-events:none;
 
     animation:
-        subtleRing 7s ease-in-out infinite;
+        subtleRing 5s ease-in-out infinite;
 }
 
 
@@ -1015,23 +1041,21 @@ nav a:hover{
 
 @keyframes ambientBreath{
 
-    0%,
-    100%{
+    0%,100%{
         transform:
             translate(-50%,-50%)
-            scale(.92);
+            scale(.78);
 
-        opacity:.55;
+        opacity:.65;
     }
 
     50%{
         transform:
             translate(-50%,-50%)
-            scale(1.08);
+            scale(1.12);
 
         opacity:1;
     }
-
 }
 
 
@@ -1040,27 +1064,26 @@ nav a:hover{
     0%{
         transform:
             translate(-50%,-50%)
-            scale(.55);
+            scale(.35);
 
         opacity:0;
     }
 
-    12%{
-        opacity:.65;
+    8%{
+        opacity:1;
     }
 
-    70%{
-        opacity:.18;
+    60%{
+        opacity:.35;
     }
 
     100%{
         transform:
             translate(-50%,-50%)
-            scale(1.35);
+            scale(1.55);
 
         opacity:0;
     }
-
 }
 
 
@@ -1069,37 +1092,35 @@ nav a:hover{
     0%{
         transform:
             translate(-50%,-50%)
-            scale(.55);
+            scale(.35);
 
         opacity:0;
     }
 
-    12%{
-        opacity:.55;
+    8%{
+        opacity:.8;
     }
 
-    70%{
-        opacity:.14;
+    60%{
+        opacity:.25;
     }
 
     100%{
         transform:
             translate(-50%,-50%)
-            scale(1.35);
+            scale(1.55);
 
         opacity:0;
     }
-
 }
 
 
 @keyframes subtleRing{
 
-    0%,
-    100%{
+    0%,100%{
         transform:
             translate(-50%,-50%)
-            scale(.96);
+            scale(.85);
 
         opacity:.25;
     }
@@ -1107,11 +1128,10 @@ nav a:hover{
     50%{
         transform:
             translate(-50%,-50%)
-            scale(1.06);
+            scale(1.12);
 
-        opacity:.55;
+        opacity:.8;
     }
-
 }
 
 
