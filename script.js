@@ -25,7 +25,7 @@ document.getElementById("theme").innerHTML=data.theme_cn;
 
 document.getElementById("route").innerHTML=data.route_cn;
 
-document.getElementById("time").innerHTML=data.time;
+document.getElementById("time").textContent=data.time;
 
 document.getElementById("people").innerHTML=data.people_cn;
 
@@ -36,15 +36,17 @@ document.getElementById("people").innerHTML=data.people_cn;
 else{
 
 
-document.getElementById("date-en").innerHTML=data.date;
+const dateParts = data.date.split(".");
+const englishDate = new Date(Date.UTC(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[2]))).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+document.getElementById("date-en").textContent=englishDate;
 
-document.getElementById("theme-en").innerHTML=data.theme_en;
+document.getElementById("theme-en").textContent=data.theme_en;
 
-document.getElementById("route-en").innerHTML=data.route_en;
+document.getElementById("route-en").textContent=data.route_en;
 
-document.getElementById("time-en").innerHTML=data.time;
+document.getElementById("time-en").textContent=data.time;
 
-document.getElementById("people-en").innerHTML=data.people_en;
+document.getElementById("people-en").textContent=data.people_en;
 
 
 }
