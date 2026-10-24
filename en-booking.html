@@ -21,7 +21,7 @@ Book City Return
 <nav>
 
 <a href="en.html">
-HIMALAYA CORE GO
+HIMALAYA CORE
 </a>
 
 <a href="en-content.html">
@@ -126,12 +126,16 @@ SPACE
 
 
 <label>
-Date
+Date (YYYY-MM-DD)
 </label>
 
 <input
-type="date"
+type="text"
 name="date"
+placeholder="YYYY-MM-DD"
+inputmode="numeric"
+pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+title="Enter the date in YYYY-MM-DD format"
 required
 >
 
