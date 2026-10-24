@@ -42,9 +42,10 @@ textarea{
 
 .home{
     width:100%;
-    height:100vh;
-    min-height:600px;
-    overflow:hidden;
+    height:auto;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
     position:relative;
 
     background:
@@ -68,7 +69,8 @@ textarea{
 
 .home-center{
     width:100%;
-    height:100vh;
+    height:auto;
+    min-height:100vh;
 
     display:flex;
     flex-direction:column;
@@ -1292,4 +1294,60 @@ nav a:hover{
         gap:0;
     }
 
+}
+
+
+/* ==================================================
+   NEXT RETURN PREVIEW — HOME
+================================================== */
+
+.next-preview{
+    position:relative;
+    z-index:5;
+    width:min(420px, 100%);
+    margin-top:24px;
+    padding-top:16px;
+    border-top:1px solid rgba(70,95,105,.16);
+    color:#788388;
+    text-align:center;
+}
+
+.next-preview-label{
+    font-size:8px;
+    letter-spacing:.24em;
+    color:#879399;
+}
+
+.next-preview p{
+    margin:8px 0 7px;
+    font-size:10px;
+    line-height:1.8;
+    letter-spacing:.04em;
+    color:#737d82;
+}
+
+.next-preview a{
+    display:inline-block;
+    font-size:9px;
+    letter-spacing:.08em;
+    color:#4e666d;
+    border-bottom:1px solid rgba(78,102,109,.35);
+    padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+}
+
+.next-preview a:hover{
+    color:#283e45;
+    border-color:#283e45;
+}
+
+@media(max-width:700px){
+    .next-preview{
+        margin-top:20px;
+        max-width:340px;
+    }
+
+    .next-preview p{
+        font-size:10px;
+    }
 }
