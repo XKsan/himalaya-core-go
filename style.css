@@ -1365,3 +1365,29 @@ nav a:hover{
     font-size:9px;
     color:#92999d;
 }
+
+
+/* Secondary homepage link: keep the event CTA primary, retain access to all routes */
+.secondary-link{
+    position:relative;
+    z-index:5;
+    display:inline-block;
+    margin-top:17px;
+    padding-bottom:3px;
+    font-size:9px;
+    line-height:1.8;
+    letter-spacing:.06em;
+    color:#858f94;
+    transition:color .25s ease;
+}
+
+.secondary-link:hover{
+    color:#46565d;
+}
+
+@media(max-width:700px){
+    .secondary-link{
+        margin-top:14px;
+        font-size:9px;
+    }
+}
