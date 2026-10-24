@@ -1351,3 +1351,18 @@ nav a:hover{
         font-size:10px;
     }
 }
+
+
+.next-preview-date{
+    margin-top:10px;
+    font-size:12px;
+    line-height:1.7;
+    letter-spacing:.12em;
+    color:#48575d;
+}
+
+.next-preview .next-preview-note{
+    margin-top:2px;
+    font-size:9px;
+    color:#92999d;
+}
