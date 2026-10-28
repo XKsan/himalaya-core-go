@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-route="water">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WATER · Let Things Flow | City Return</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="en.html">HIMALAYA CORE</a>
+  <a href="en.html">Back to Home</a>
+</nav>
+<main class="page booking">
+  <section class="hero">
+    <div class="small" id="route-date-kicker">NEXT RETURN</div>
+    <h2>WATER<br>Let Things Flow</h2>
+    <p class="lead">City Return · Shanghai</p>
+    <p>Walk beside the water and observe movement, change, relationships and time. Through slow walking, attentive observation and quiet pauses, reconnect with the flow of the city.</p>
+    <p>Route direction：Suzhou Creek × Riverside Spaces × Bridges and Water × Quiet Pauses。</p>
+    <p>Date：<span id="event-date">请以首页当日信息为准</span></p>
+    <p>Time：<span id="event-time">请以首页当日信息为准</span></p>
+    <p>Format：Private 1:1 or small-group experience (1–4 people). Private experiences start at ¥699; the exact price and arrangements will be confirmed individually.</p>
+    <p>This session currently accepts private experience enquiries. A public group session is offered separately on Saturdays.</p>
+    <p>Submitting this form expresses your interest and does not constitute a confirmed booking. The exact meeting point will be provided after contact and confirmation.</p>
+  </section>
+  <section>
+    <div class="small">REGISTER YOUR INTEREST</div>
+    <h3>Register Your Interest</h3>
+    <form action="https://formspree.io/f/xaenvjqk" method="POST">
+      <input type="hidden" name="_next" value="https://xksan.github.io/himalaya-core-go/success-en.html">
+      <input type="hidden" name="event" value="City Return · Shanghai | WATER | ">
+      <input type="hidden" name="route" value="WATER">
+      <input type="hidden" name="date" value="">
+      <label>Name</label>
+      <input type="text" name="name" autocomplete="name" required>
+      <label>Phone or WeChat ID</label>
+      <input type="text" name="contact" autocomplete="tel" required>
+      <label>Email (optional)</label>
+      <input type="email" name="email" autocomplete="email">
+      <label>Number of participants</label>
+      <select name="party_size" required><option value="1 person">1 person</option><option value="2 people">2 people</option><option value="3 people">3 people</option><option value="4 or more">4 or more</option></select>
+      <label>Anything you would like to share (optional)</label>
+      <textarea name="message" placeholder="For example, questions about timing, fees or the route"></textarea>
+      <button type="submit">Submit Your Interest</button>
+    </form>
+  </section>
+  <section class="contact">
+    <h3>WeChat Contact</h3>
+    <img src="assets/wechat-qrcode.png" class="wechat" alt="WeChat QR code">
+    <p>After submission, we will contact you to confirm the time, meeting point, fees and other arrangements.</p>
+  </section>
+</main>
+<script src="route-page.js"></script>
+</body>
+</html>
